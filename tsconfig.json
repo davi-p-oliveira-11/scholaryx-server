@@ -5,7 +5,7 @@
     "lib": ["ES2022"],
 
     /* Node ESM */
-    "module": "ES2022",
+    "module": "commonjs",
     "moduleResolution": "node",
 
     /* Project structure */
