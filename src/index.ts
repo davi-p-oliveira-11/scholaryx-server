@@ -19,9 +19,14 @@ import { auth } from "./lib/auth.js";
 const app = express();
 const PORT = 8000;
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  process.env.FRONTEND_PREVIEW_URL,
+].filter((origin): origin is string => Boolean(origin));
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, 
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"], 
     credentials: true, 
   })
